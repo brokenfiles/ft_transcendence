@@ -5,9 +5,10 @@ RUN apt-get update -qq && apt-get install -y nodejs postgresql-client yarn
 WORKDIR /myapp
 COPY Gemfile /myapp/Gemfile
 COPY Gemfile.lock /myapp/Gemfile.lock
-RUN bundle install
 COPY . /myapp
-
+RUN bundle install
+RUN yarn install
+RUN rake webpacker:install
 
 COPY entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
