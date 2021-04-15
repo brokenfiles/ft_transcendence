@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="ce8a8989-5a33-4707-99fb-f96fbb26ab69" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entrypoint.sh" beforeDir="false" afterPath="$PROJECT_DIR$/entrypoint.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,7 +167,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1618332992581</updated>
-      <workItem from="1618332993919" duration="10015000" />
+      <workItem from="1618332993919" duration="11020000" />
     </task>
     <servers />
   </component>
