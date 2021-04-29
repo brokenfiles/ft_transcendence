@@ -1,6 +1,8 @@
-class CreateUsersTable < ActiveRecord::Migration[6.1]
+class CreateUser < ActiveRecord::Migration[6.1]
   def change
     create_table :users do |t|
+      t.belongs_to :guild
+
       t.string :display_name, default: nil
       t.string :role, default: "user"
       t.string :login, default: nil

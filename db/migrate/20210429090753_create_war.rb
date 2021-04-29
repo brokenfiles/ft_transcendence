@@ -1,6 +1,9 @@
 class CreateWar < ActiveRecord::Migration[6.1]
   def change
     create_table :wars do |t|
+      t.belongs_to :first_guild, class_name: 'Guild'
+      t.belongs_to :second_guild, class_name: 'Guild'
+
       t.timestamp :started_at, default: -> { 'CURRENT_TIMESTAMP' }
       t.timestamp :ended_at, default: -> { 'CURRENT_TIMESTAMP' }
       t.integer :reward, default: 0
