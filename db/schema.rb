@@ -10,9 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2021_04_29_084900) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "users", force: :cascade do |t|
+    t.string "display_name"
+    t.string "role", default: "user"
+    t.string "login"
+    t.integer "points", default: 0
+    t.string "oauth_token"
+    t.string "double_auth"
+    t.string "guild_rank"
+    t.datetime "banned"
+    t.string "ban_reason"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
 end
