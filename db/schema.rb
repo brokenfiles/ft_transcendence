@@ -10,10 +10,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_29_084900) do
+ActiveRecord::Schema.define(version: 2021_04_29_091211) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "achievements", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "condition"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "battles", force: :cascade do |t|
+    t.string "scores"
+    t.boolean "rated", default: false
+    t.string "type"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "guilds", force: :cascade do |t|
+    t.string "display_name"
+    t.string "anagram", limit: 5
+    t.integer "points", default: 0
+    t.integer "war_points", default: 0
+    t.boolean "open", default: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "tournaments", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.integer "price", default: 0
+    t.boolean "rated", default: false
+    t.boolean "generated", default: true
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "display_name"
@@ -25,6 +61,17 @@ ActiveRecord::Schema.define(version: 2021_04_29_084900) do
     t.string "guild_rank"
     t.datetime "banned"
     t.string "ban_reason"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "wars", force: :cascade do |t|
+    t.datetime "started_at", default: -> { "CURRENT_TIMESTAMP" }
+    t.datetime "ended_at", default: -> { "CURRENT_TIMESTAMP" }
+    t.integer "reward", default: 0
+    t.datetime "wartime_start"
+    t.datetime "wartime_end"
+    t.integer "max_unanswered", default: 10
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

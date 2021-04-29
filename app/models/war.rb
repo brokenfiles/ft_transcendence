@@ -1,0 +1,3 @@
+class War < ApplicationRecord
+
+end
