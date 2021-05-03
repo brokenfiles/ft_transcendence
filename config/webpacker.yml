@@ -21,6 +21,7 @@ default: &default
   static_assets_extensions:
     - .jpg
     - .jpeg
+    - .json
     - .png
     - .gif
     - .tiff
@@ -37,6 +38,7 @@ default: &default
     - .js
     - .sass
     - .scss
+    - .json
     - .css
     - .module.sass
     - .module.scss

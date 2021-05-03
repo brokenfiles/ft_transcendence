@@ -1,0 +1,27 @@
+@import "variables";
+
+#navbar {
+  background-color: $secondary_color;
+  color: $text_color;
+
+  #search-bar {
+    border-color: $text_color;
+
+    input {
+
+      &::placeholder {
+        color: $text_color;
+      }
+    }
+  }
+
+  #logout {
+    background-color: $yellow_color;
+    color: $primary_color;
+  }
+
+  .dropdown-items {
+    background-color: $primary_color;
+    color: $text_color;
+  }
+}

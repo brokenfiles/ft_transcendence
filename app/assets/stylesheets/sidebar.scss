@@ -1,0 +1,26 @@
+@import "variables";
+
+#sidebar {
+  z-index: 5;
+  background-color: $primary_color;
+  color: $text_color;
+
+  .item-img {
+    width: 72px;
+    color: $yellow_color;
+  }
+
+  .item-link {
+    input {
+      color: $text_color;
+
+      &::placeholder {
+        color: $text_color;
+      }
+    }
+
+    .play-button {
+      color: $yellow_color;
+    }
+  }
+}
