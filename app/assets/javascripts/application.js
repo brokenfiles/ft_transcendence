@@ -12,7 +12,7 @@ const $app = document.getElementById('app')
 $app.style['padding-top'] = `${navHeight}px`
 $app.style['padding-left'] = `${sideWidth}px`
 
-particlesJS.load('particles-js', 'assets/particles.json', function() {
-    console.log('callback - particles.js config loaded');
-});
+// particlesJS.load('particles-js', 'assets/particles.json', function() {
+//     console.log('callback - particles.js config loaded');
+// });
 
