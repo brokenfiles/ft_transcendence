@@ -15,10 +15,20 @@
  */
 
 #sidebar {
-  width: 72px;
-  transition: width 0.3s ease-in-out;
+  max-width: 72px;
+  transition: all 0.3s ease;
+
+  .item-content {
+    transition: max-height 0.3s ease;
+    max-height: 0;
+  }
 
   &:hover {
-    width: 150px;
+    max-width: 500px;
+    //width: 150px;
+
+    .item-content {
+      max-height: 500px;
+    }
   }
 }
