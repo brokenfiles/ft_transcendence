@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+
+#sidebar {
+  width: 72px;
+  transition: width 0.3s ease-in-out;
+
+  &:hover {
+    width: 150px;
+  }
+}
