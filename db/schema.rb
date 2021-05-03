@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_29_130211) do
+ActiveRecord::Schema.define(version: 2021_05_02_125219) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2021_04_29_130211) do
     t.bigint "winner_id"
     t.string "scores"
     t.boolean "rated", default: false
-    t.string "type"
+    t.string "match_type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["first_user_id"], name: "index_battles_on_first_user_id"
@@ -61,6 +61,23 @@ ActiveRecord::Schema.define(version: 2021_04_29_130211) do
     t.index ["owner_id"], name: "index_guilds_on_owner_id"
   end
 
+  create_table "room_messages", force: :cascade do |t|
+    t.bigint "room_id", null: false
+    t.bigint "user_id", null: false
+    t.text "message"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["room_id"], name: "index_room_messages_on_room_id"
+    t.index ["user_id"], name: "index_room_messages_on_user_id"
+  end
+
+  create_table "rooms", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["name"], name: "index_rooms_on_name", unique: true
+  end
+
   create_table "tournaments", force: :cascade do |t|
     t.bigint "winner_id"
     t.bigint "host_id"
@@ -89,8 +106,10 @@ ActiveRecord::Schema.define(version: 2021_04_29_130211) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "banned_by_id"
+    t.bigint "tournament_id"
     t.index ["banned_by_id"], name: "index_users_on_banned_by_id"
     t.index ["guild_id"], name: "index_users_on_guild_id"
+    t.index ["tournament_id"], name: "index_users_on_tournament_id"
   end
 
   create_table "wars", force: :cascade do |t|
@@ -108,4 +127,6 @@ ActiveRecord::Schema.define(version: 2021_04_29_130211) do
     t.index ["second_guild_id"], name: "index_wars_on_second_guild_id"
   end
 
+  add_foreign_key "room_messages", "rooms"
+  add_foreign_key "room_messages", "users"
 end
