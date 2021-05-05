@@ -2,12 +2,28 @@
 
 #sidebar {
   z-index: 5;
+  max-width: 72px;
+  transition: all 0.3s ease;
   background-color: $primary_color;
   color: $text_color;
 
   .item-img {
     width: 72px;
     color: $yellow_color;
+  }
+
+  .item-content {
+    transition: max-height 0.3s ease;
+    max-height: 0;
+  }
+
+  &:hover {
+    max-width: 500px;
+    //width: 150px;
+
+    .item-content {
+      max-height: 500px;
+    }
   }
 
   .item-link {

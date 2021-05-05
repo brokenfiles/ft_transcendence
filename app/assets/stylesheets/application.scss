@@ -16,31 +16,9 @@
 
 @import "variables";
 
-#sidebar {
-  max-width: 72px;
-  transition: all 0.3s ease;
-
-  .item-content {
-    transition: max-height 0.3s ease;
-    max-height: 0;
-  }
-
-  &:hover {
-    max-width: 500px;
-    //width: 150px;
-
-    .item-content {
-      max-height: 500px;
-    }
-  }
-}
-
 #app {
   background-color: #29292b;
 
-  #particle-js {
-    position: fixed;
-  }
 }
 
 .text-color {
@@ -57,4 +35,8 @@
 
 .bg-yellow {
   background-color: $yellow_color;
+}
+
+.bg-primary {
+  background-color: $primary_color;
 }

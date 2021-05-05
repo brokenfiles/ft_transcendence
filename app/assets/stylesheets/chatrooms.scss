@@ -1,0 +1,40 @@
+#chat-rooms {
+  transition: all 0.3s ease-in-out;
+
+  .chat-header {
+
+    #chatroom-icon {
+      transition: transform 0.3s ease-in-out;
+    }
+
+  }
+
+  #chat-body {
+    transition: height 0.3s ease-in-out;
+  }
+
+  &.closed {
+
+    #chatroom-icon {
+      transform: rotate(180deg);
+    }
+
+    #chat-body {
+      height: 0;
+    }
+
+  }
+
+  &.open {
+
+    #chatroom-icon {
+      transform: rotate(0deg);
+    }
+
+    #chat-body {
+      height: 50vh;
+    }
+
+  }
+
+}
